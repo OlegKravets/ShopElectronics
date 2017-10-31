@@ -1,0 +1,91 @@
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe.config
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.dll
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.dll
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.dll
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.xml
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.xml
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.xml
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Properties.Resources.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csproj.GenerateResource.Cache
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ShopElectronics.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.AddProduct.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Buy.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ViewProducts.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Password.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.DeleteProduct.resources
+D:\Мой документы\Олег\Универ\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.PasswordForDelete.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe.config
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.dll
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.dll
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.dll
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.xml
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.xml
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.xml
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csprojResolveAssemblyReference.cache
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.AddProduct.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Buy.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.DeleteProduct.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Password.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.PasswordForDelete.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Properties.Resources.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ShopElectronics.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ViewProducts.resources
+D:\Мой документы\Олег\Универ\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csproj.GenerateResource.Cache
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe.config
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.dll
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.dll
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.dll
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.xml
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.xml
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.xml
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csprojResolveAssemblyReference.cache
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.AddProduct.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Buy.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.DeleteProduct.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Password.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.PasswordForDelete.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Properties.Resources.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ShopElectronics.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ViewProducts.resources
+D:\Мой документы\Олег\С#\C# (портфолио)\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csproj.GenerateResource.Cache
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe.config
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.exe
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\ShopElectronics.pdb
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.dll
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.dll
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.dll
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.xml
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\EntityFramework.SqlServer.xml
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\bin\Debug\System.Data.SQLite.xml
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.AddProduct.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Buy.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.DeleteProduct.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Properties.Resources.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ShopElectronics.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.ViewProducts.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csproj.GenerateResource.Cache
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.csprojResolveAssemblyReference.cache
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.Authentification.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Debug\ShopElectronics.AddUser.resources

@@ -1,0 +1,8 @@
+DROP TABLE Users;
+
+command.CommandText = "CREATE TABLE Users(Login char(32), Password char(32), Admin BOOLEAN)";
+
+command.CommandText = "INSERT INTO Users(Login, Password, Admin) Values('Oleg', '111', true)";
+
+command.CommandText = "DELETE FROM Users WHERE Login = 'Artem'";
+                    
