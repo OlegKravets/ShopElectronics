@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using Excel = Microsoft.Office.Interop.Excel;
+using System;
 
 namespace ShopElectronics
 {
@@ -273,9 +272,9 @@ namespace ShopElectronics
             }
         }
 
-        static public int BuyProduct(string nameProduct, int numberBuyProducts, 
-                                      string firmProduct, int numberProduct, 
-                                      int priceProduct, ListBox lbFirm, 
+        static public int BuyProduct(string nameProduct, int numberBuyProducts,
+                                      string firmProduct, int numberProduct,
+                                      int priceProduct, ListBox lbFirm,
                                       ListBox lbNumber, ListBox lbPrice)
         {
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
@@ -317,6 +316,113 @@ namespace ShopElectronics
 
                 return priceProduct * numberBuyProducts;
             }
+        }
+
+        static public void ExportDBInExcelFile(string pathSaveFile, ViewProducts.Menu m)
+        {
+            List<string> products = new List<string>(); //набор данных с таблицы товаров
+            int lineInExcel = 2; // номер строки в файле Eхcel
+
+            //создание объекта Excel приложения
+            Excel.Application excelApp = new Excel.Application();
+
+            object misValue = System.Reflection.Missing.Value;
+
+            //добавление новой рабочей области
+            Excel.Workbook xlWorkBook = excelApp.Workbooks.Add(misValue);
+
+            //добавление нового листа
+            Excel.Worksheet workSheet = excelApp.ActiveSheet;
+
+            //заполнение листа названиями столбцов
+            workSheet.Cells[lineInExcel, "B"] = "Name product";
+            workSheet.Cells[lineInExcel, "C"] = "Firm product";
+            workSheet.Cells[lineInExcel, "D"] = "Number product";
+            workSheet.Cells[lineInExcel++, "E"] = "Price product ($)";
+
+            using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
+            {
+                using(SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    connection.Open();
+
+                    //подготовка запроса на выборку из главной таблицы
+                    command.CommandText = "SELECT * FROM Product";
+
+                    //чтение данных с главной таблицы
+                    using(SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            products.Add(reader["Name"].ToString());
+                        }
+                        reader.Close();
+                    }
+
+                    int sizeMainTable = products.Count(); //размер главной таблицы
+                    int lineInMaintable = 0; //счётчик строк в главной таблице
+
+                    for(int j = 0; j < sizeMainTable; j++)
+                    {
+                        //подготовка запроса на выборку из дочерней таблицы
+                        command.CommandText = string.Format("SELECT * FROM {0}", products[lineInMaintable]);
+
+                        //чтение данных с таблицы и запись данных в Excel
+                        using(SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while(reader.Read())
+                            {
+                                workSheet.Cells[lineInExcel, "B"] = products[lineInMaintable];
+                                workSheet.Cells[lineInExcel, "C"] = reader["Name"].ToString();
+                                workSheet.Cells[lineInExcel, "D"] = reader["Number"].ToString();
+                                workSheet.Cells[lineInExcel++, "E"] = reader["Price"].ToString();
+                            }
+                            reader.Close();
+                        }
+
+                        lineInMaintable++; //переход на следующую строку главной таблицы
+                    }
+                }
+                connection.Close();//закрыть соединение с БД
+            }
+
+            //объект ячейки
+            Excel.Range excelCells;
+
+            //форматирвоание ячеек
+            for(int i = 2; i < lineInExcel; i++)
+            {
+                for(char ch = 'B'; ch <= 'E'; ch++)
+                {
+                    excelCells = workSheet.get_Range(string.Format("{0}{1}", ch, i));
+                    excelCells.Borders.ColorIndex = 1;
+                }
+                workSheet.Columns[i].AutoFit();
+                workSheet.Columns[i].HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+            }
+
+            //сохранение Excel по указанному пути
+            xlWorkBook.SaveAs(pathSaveFile);
+
+            if(m == ViewProducts.Menu.print)
+            {
+                //Выделение ячеек для печати
+                excelCells = workSheet.get_Range("B2", string.Format("E{0}", lineInExcel));
+
+                //печать выделенных ячеек
+                try
+                {
+                    excelCells.PrintOutEx(1, 1, 1, false, "Canon MF210 Series", misValue, misValue, misValue);
+                }
+                catch
+                {
+                    throw new Exception("Unable to connect to printer!");
+                }  
+            }
+
+            //закрыть приложение Excel
+            xlWorkBook.Close(true, misValue, misValue);
+            excelApp.Quit();
         }
     }
 }

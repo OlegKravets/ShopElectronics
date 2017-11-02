@@ -52,8 +52,15 @@ namespace ShopElectronics
  
             string nameProduct = NameProductNew.Text; //новое название продукта
             string name = NameNew.Text; //новое название фирмы
-            int number = int.Parse(NumberNew.Text); //новое кол-во продукта
-            int price = int.Parse(PriceNew.Text); //новая цена
+            int number = 0; //новое кол-во продукта
+            int price = 0; //новая цена
+
+            if(!int.TryParse(NumberNew.Text, out number) || number <= 0 ||
+               !int.TryParse(PriceNew.Text, out price) || price <= 0)
+            {
+                MessageBox.Show("Incorrect input in field 'Number' of 'Price'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             DataDBShop.AddNewProduct(nameProduct, name, number, price); 
         }

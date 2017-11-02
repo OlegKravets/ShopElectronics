@@ -40,9 +40,7 @@ namespace ShopElectronics
         private void AddProduct_Click(object sender,EventArgs e)
         {
             AddProduct ap = new AddProduct();
-
-            if(ap.ShowDialog() == DialogResult.OK)
-                ap.Close();
+            ap.ShowDialog();
         }
 
         private void BuyProduct_Click(object sender,EventArgs e)
@@ -59,8 +57,8 @@ namespace ShopElectronics
 
         private void DeleteProduct_Click(object sender,EventArgs e)
         {
-            AddProduct ap = new AddProduct();
-            ap.ShowDialog();
+            DeleteProduct delete = new DeleteProduct();
+            delete.ShowDialog();
         }
 
         private void ShopElectronics_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,8 +72,6 @@ namespace ShopElectronics
             {
                 AddProduct.Visible = false;
                 DeleteProduct.Visible = false;
-
-                llCheckOut.Visible = false;
 
                 ViewProducts.Location = new Point(AddProduct.Location.X, AddProduct.Location.Y);
                 BuyProduct.Location = new Point(DeleteProduct.Location.X, DeleteProduct.Location.Y);
@@ -91,7 +87,7 @@ namespace ShopElectronics
 
         private void llCheckOut_Click(object sender, EventArgs e)
         {
-            AddUser au = new AddUser();
+            AddUser au = new AddUser(typeUser);
             if(au.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("The user was successfully added!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);

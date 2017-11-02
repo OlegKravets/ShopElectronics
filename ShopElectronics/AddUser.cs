@@ -12,11 +12,14 @@ namespace ShopElectronics
 {
     public partial class AddUser : Form
     {
-        public AddUser()
+        public AddUser(TypeUser type)
         {
             InitializeComponent();
             tbPassword.PasswordChar = '*';
             rbSimpleUser.Checked = true;
+
+            if(type == TypeUser.simpleUser)
+                rbAdmin.Visible = false;
         }
 
         private void btnApply_Click(object sender, EventArgs e)

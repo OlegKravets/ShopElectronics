@@ -34,6 +34,7 @@
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
+            this.menuMain = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.Firm,
             this.Number,
             this.Price});
-            this.dataGridView.Location = new System.Drawing.Point(35, 12);
+            this.dataGridView.Location = new System.Drawing.Point(35, 30);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(645, 400);
@@ -89,22 +90,32 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExit.Location = new System.Drawing.Point(601, 419);
+            this.btnExit.Location = new System.Drawing.Point(601, 436);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(79, 28);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = false;
             // 
+            // menuMain
+            // 
+            this.menuMain.Location = new System.Drawing.Point(0, 0);
+            this.menuMain.Name = "menuMain";
+            this.menuMain.Size = new System.Drawing.Size(713, 24);
+            this.menuMain.TabIndex = 4;
+            this.menuMain.Text = "menuMain";
+            // 
             // ViewProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(713, 459);
+            this.ClientSize = new System.Drawing.Size(713, 476);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.menuMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuMain;
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(729, 339);
             this.Name = "ViewProducts";
@@ -112,6 +123,7 @@
             this.Text = "ViewProducts";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,5 +135,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.MenuStrip menuMain;
     }
 }
