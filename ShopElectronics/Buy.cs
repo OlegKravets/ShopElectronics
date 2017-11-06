@@ -20,23 +20,6 @@ namespace ShopElectronics
         {
             InitializeComponent();
 
-            //--------------------------------------------------------------------
-
-            label1.Anchor = AnchorStyles.Top;
-            label2.Anchor = AnchorStyles.Top;
-            label3.Anchor = AnchorStyles.Top;
-
-            btnBuy.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-
-            lbFirm.Anchor = AnchorStyles.Top;
-            lbProduct.Anchor = AnchorStyles.Top;
-            lbNumber.Anchor = AnchorStyles.Top;
-            lbPrice.Anchor = AnchorStyles.Top;
-
-            NumberBuyProduct.Anchor = AnchorStyles.Top;
-
-            //--------------------------------------------------------------------
-
             DataDBShop.InputDateWithTable(lbProduct, lbFirm, lbNumber, lbPrice, "Product");
         }
 
@@ -56,13 +39,7 @@ namespace ShopElectronics
         {
             int numberProduct = 0;
             int priceProduct = 0;
-            int numberBuyProducts;
-
-            if(!(int.TryParse(NumberBuyProduct.Text, out numberBuyProducts)) || numberBuyProducts < 1)
-            {
-                MessageBox.Show("Enter valid field number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            int numberBuyProducts = (int)numUpDownNumber.Value;
 
             firmProduct = lbFirm.Text;
 

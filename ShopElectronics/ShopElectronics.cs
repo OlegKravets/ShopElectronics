@@ -12,8 +12,8 @@ namespace ShopElectronics
 {
     public partial class ShopElectronics : Form
     {
-        private TypeUser typeUser;
-        private string login;
+        private TypeUser typeUser; //тип пользователя
+        private string login; //логин пользователя
 
         public ShopElectronics(TypeUser tu, string log)
         {
@@ -23,39 +23,28 @@ namespace ShopElectronics
             typeUser = tu;
             login = log;
 
-            Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
-
-            label1.Anchor = Anchor = (AnchorStyles.Top);
-            label2.Anchor = Anchor = (AnchorStyles.Bottom | AnchorStyles.Left);
-            label3.Anchor = Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-
-            AddProduct.Anchor = (AnchorStyles.Top);
-            DeleteProduct.Anchor = (AnchorStyles.Top);
-            ViewProducts.Anchor = (AnchorStyles.Top);
-            BuyProduct.Anchor = (AnchorStyles.Top);
-
             llLogOut.Text += ", " + log;
         }
 
-        private void AddProduct_Click(object sender,EventArgs e)
+        private void AddProduct_Click(object sender, EventArgs e)
         {
             AddProduct ap = new AddProduct();
             ap.ShowDialog();
         }
 
-        private void BuyProduct_Click(object sender,EventArgs e)
+        private void BuyProduct_Click(object sender, EventArgs e)
         {
             Buy buyProduct = new Buy();
             buyProduct.ShowDialog();
         }
 
-        private void ViewProducts_Click(object sender,EventArgs e)
+        private void ViewProducts_Click(object sender, EventArgs e)
         {
             ViewProducts viewProducts = new ViewProducts();
             viewProducts.ShowDialog();
         }
 
-        private void DeleteProduct_Click(object sender,EventArgs e)
+        private void DeleteProduct_Click(object sender, EventArgs e)
         {
             DeleteProduct delete = new DeleteProduct();
             delete.ShowDialog();
@@ -72,6 +61,7 @@ namespace ShopElectronics
             {
                 AddProduct.Visible = false;
                 DeleteProduct.Visible = false;
+                btnViewUsers.Visible = false;
 
                 ViewProducts.Location = new Point(AddProduct.Location.X, AddProduct.Location.Y);
                 BuyProduct.Location = new Point(DeleteProduct.Location.X, DeleteProduct.Location.Y);
@@ -85,7 +75,13 @@ namespace ShopElectronics
             a.ShowDialog();
         }
 
-        private void llCheckOut_Click(object sender, EventArgs e)
+        private void btnViewUsers_Click(object sender, EventArgs e)
+        {
+            ViewUsers vu = new ViewUsers();
+            vu.ShowDialog();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
             AddUser au = new AddUser(typeUser);
             if(au.ShowDialog() == DialogResult.OK)

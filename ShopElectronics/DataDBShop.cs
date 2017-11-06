@@ -7,7 +7,7 @@ using System;
 
 namespace ShopElectronics
 {
-    class DataDBShop
+    static class DataDBShop
     {
         static public void CreateTable(SQLiteCommand command, string nameProduct)
         {
@@ -85,7 +85,7 @@ namespace ShopElectronics
 
         static public void ViewData(DataGridView dataGridView)
         {
-            int i = 0;
+            //набор товаров с главной таблицы
             List<string> products = new List<string>();
 
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
@@ -110,36 +110,26 @@ namespace ShopElectronics
                     int sizeMainTable = products.Count(); //размер главной таблицы
                     int lineInMaintable = 0; //счётчик строк в главной таблице
 
-                    List<string> name = new List<string>(); //все названия в дочерней таблице
-                    List<string> number = new List<string>(); //всё кол-вотовара  в дочерней таблице
-                    List<string> price = new List<string>(); //все цены в дочерней таблице
-
                     for(int j = 0; j < sizeMainTable; j++)
                     {
                         //подготовка запроса на выборку из дочерней таблицы
-                        command.CommandText = string.Format("SELECT * FROM {0}", products[i++]);
+                        command.CommandText = string.Format("SELECT * FROM {0}", products[lineInMaintable]);
 
                         //чтение данных с таблицы
                         using(SQLiteDataReader reader = command.ExecuteReader())
                         {
                             while(reader.Read())
                             {
-                                name.Add(reader["Name"].ToString());
-                                number.Add(reader["Number"].ToString());
-                                price.Add(reader["Price"].ToString());
+                                //вывод в грид данных после результата выборки
+                                dataGridView.Rows.Add(products[lineInMaintable],
+                                                      reader["Name"].ToString(),
+                                                      reader["Number"].ToString(),
+                                                      reader["Price"].ToString());
                             }
                             reader.Close();
                         }
 
-                        //вывод в грид данных после результата выборки
-                        for(int k = 0; k < name.Count(); k++)
-                            dataGridView.Rows.Add(products[lineInMaintable], name[k], number[k], price[k]);
-
                         lineInMaintable++; //переход на следующую строку главной таблицы
-
-                        name.Clear(); //очистка списка имен
-                        number.Clear(); //очистка списка кол-во
-                        price.Clear(); //очистка списка цены
                     }
                 }
                 connection.Close();//закрыть соединение с БД
@@ -412,12 +402,12 @@ namespace ShopElectronics
                 //печать выделенных ячеек
                 try
                 {
-                    excelCells.PrintOutEx(1, 1, 1, false, "Canon MF210 Series", misValue, misValue, misValue);
+                    excelCells.PrintOutEx(1, 1, 1, false, misValue, misValue, misValue, misValue);
                 }
                 catch
                 {
                     throw new Exception("Unable to connect to printer!");
-                }  
+                }
             }
 
             //закрыть приложение Excel

@@ -16,22 +16,6 @@ namespace ShopElectronics
         public AddProduct()
         {
             InitializeComponent();
-
-            //--------------------------------------------------------------
-
-            label1.Anchor = AnchorStyles.Top;
-            label2.Anchor = AnchorStyles.Top;
-            label3.Anchor = AnchorStyles.Top;
-            label4.Anchor = AnchorStyles.Top;
-
-            NameNew.Anchor = AnchorStyles.Top;
-            NameProductNew.Anchor = AnchorStyles.Top;
-            NumberNew.Anchor = AnchorStyles.Top;
-            PriceNew.Anchor = AnchorStyles.Top;
-
-            AddNewProduct.Anchor = AnchorStyles.Top;
-
-            //--------------------------------------------------------------
         }
 
         private void AddNewProduct_Click(object sender,EventArgs e)
@@ -40,9 +24,7 @@ namespace ShopElectronics
             //--------------------------------------------------------------
 
             if(string.IsNullOrEmpty(NameProductNew.Text) || 
-               string.IsNullOrEmpty(NameNew.Text) ||
-               string.IsNullOrEmpty(NumberNew.Text) ||
-               string.IsNullOrEmpty(PriceNew.Text))
+               string.IsNullOrEmpty(NameNew.Text))
             {
                 MessageBox.Show("Not all fields are filled out!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -52,15 +34,8 @@ namespace ShopElectronics
  
             string nameProduct = NameProductNew.Text; //новое название продукта
             string name = NameNew.Text; //новое название фирмы
-            int number = 0; //новое кол-во продукта
-            int price = 0; //новая цена
-
-            if(!int.TryParse(NumberNew.Text, out number) || number <= 0 ||
-               !int.TryParse(PriceNew.Text, out price) || price <= 0)
-            {
-                MessageBox.Show("Incorrect input in field 'Number' of 'Price'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            int number = (int)numUpDownNumber.Value; //новое кол-во продукта
+            int price = (int) numUpDownPrice.Value; //новая цена
 
             DataDBShop.AddNewProduct(nameProduct, name, number, price); 
         }

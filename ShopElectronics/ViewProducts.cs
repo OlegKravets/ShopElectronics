@@ -36,7 +36,7 @@ namespace ShopElectronics
         private void PrintProducts_Click(object sender, EventArgs e)
         {
             //путь к файлу
-            string path = @"D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\Resourse\Excel.xlsx";
+            string path = "Excel.xlsx";
 
             //Сохранение БД в Excel и печать
             try
@@ -58,12 +58,22 @@ namespace ShopElectronics
             string path = string.Empty;
 
             SaveFileDialog svd = new SaveFileDialog();
-            svd.Filter = "Excel|*.xlsx";
+            svd.Filter = "Документ Excel|*.xlsx, *.xls";
+            svd.FileName = "ShopElectronicsDB.xlsx";
 
-            if(svd.ShowDialog() == DialogResult.OK)
-                path = svd.FileName;
+            if(svd.ShowDialog() != DialogResult.OK)
+                return;
 
+            path = svd.FileName;
             DataDBShop.ExportDBInExcelFile(path, Menu.export);
+        }
+
+        private void ViewProducts_SizeChanged(object sender, EventArgs e)
+        {
+            this.NameProduct.Width = (dataGridView.Size.Width / 4) - 10;
+            this.Firm.Width = (dataGridView.Size.Width / 4) - 10;
+            this.Number.Width = (dataGridView.Size.Width / 4) - 10;
+            this.Price.Width = (dataGridView.Size.Width / 4) - 10;
         }
     }
 }

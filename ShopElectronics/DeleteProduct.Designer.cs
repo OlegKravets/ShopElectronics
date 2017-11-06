@@ -88,11 +88,12 @@
             // 
             // Delete
             // 
+            this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Delete.BackColor = System.Drawing.Color.Gainsboro;
             this.Delete.FlatAppearance.BorderSize = 0;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Delete.Location = new System.Drawing.Point(516, 419);
+            this.Delete.Location = new System.Drawing.Point(529, 420);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(79, 28);
             this.Delete.TabIndex = 1;
@@ -102,12 +103,13 @@
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.BackColor = System.Drawing.Color.Gainsboro;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExit.Location = new System.Drawing.Point(601, 418);
+            this.btnExit.Location = new System.Drawing.Point(622, 419);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(79, 28);
             this.btnExit.TabIndex = 2;
@@ -130,6 +132,7 @@
             this.Name = "DeleteProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DeleteProduct";
+            this.SizeChanged += new System.EventHandler(this.DeleteProduct_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelete)).EndInit();
             this.ResumeLayout(false);
 
@@ -138,7 +141,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameFirm;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;

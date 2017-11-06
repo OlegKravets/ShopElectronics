@@ -36,11 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DeleteProduct = new System.Windows.Forms.Button();
             this.llLogOut = new System.Windows.Forms.LinkLabel();
-            this.llCheckOut = new System.Windows.Forms.LinkLabel();
+            this.btnViewUsers = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddProduct
             // 
+            this.AddProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AddProduct.BackColor = System.Drawing.Color.LemonChiffon;
             this.AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddProduct.FlatAppearance.BorderSize = 0;
@@ -56,6 +58,7 @@
             // 
             // BuyProduct
             // 
+            this.BuyProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BuyProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BuyProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BuyProduct.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -66,12 +69,13 @@
             this.BuyProduct.Name = "BuyProduct";
             this.BuyProduct.Size = new System.Drawing.Size(126, 28);
             this.BuyProduct.TabIndex = 1;
-            this.BuyProduct.Text = "Buy Product";
+            this.BuyProduct.Text = "Buy product";
             this.BuyProduct.UseVisualStyleBackColor = false;
             this.BuyProduct.Click += new System.EventHandler(this.BuyProduct_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Jokerman", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -84,6 +88,7 @@
             // 
             // ViewProducts
             // 
+            this.ViewProducts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ViewProducts.BackColor = System.Drawing.Color.MistyRose;
             this.ViewProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewProducts.FlatAppearance.BorderSize = 0;
@@ -93,12 +98,13 @@
             this.ViewProducts.Name = "ViewProducts";
             this.ViewProducts.Size = new System.Drawing.Size(126, 28);
             this.ViewProducts.TabIndex = 3;
-            this.ViewProducts.Text = "View Products";
+            this.ViewProducts.Text = "View products";
             this.ViewProducts.UseVisualStyleBackColor = false;
             this.ViewProducts.Click += new System.EventHandler(this.ViewProducts_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 297);
             this.label2.Name = "label2";
@@ -108,6 +114,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(595, 297);
             this.label3.Name = "label3";
@@ -117,6 +124,7 @@
             // 
             // DeleteProduct
             // 
+            this.DeleteProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DeleteProduct.BackColor = System.Drawing.Color.Silver;
             this.DeleteProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteProduct.FlatAppearance.BorderSize = 0;
@@ -126,12 +134,13 @@
             this.DeleteProduct.Name = "DeleteProduct";
             this.DeleteProduct.Size = new System.Drawing.Size(126, 28);
             this.DeleteProduct.TabIndex = 7;
-            this.DeleteProduct.Text = "Delete Product";
+            this.DeleteProduct.Text = "Delete product";
             this.DeleteProduct.UseVisualStyleBackColor = false;
             this.DeleteProduct.Click += new System.EventHandler(this.DeleteProduct_Click);
             // 
             // llLogOut
             // 
+            this.llLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.llLogOut.AutoSize = true;
             this.llLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.llLogOut.Location = new System.Drawing.Point(596, 9);
@@ -142,17 +151,37 @@
             this.llLogOut.Text = "Log out";
             this.llLogOut.Click += new System.EventHandler(this.llLogOut_Click);
             // 
-            // llCheckOut
+            // btnViewUsers
             // 
-            this.llCheckOut.AutoSize = true;
-            this.llCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.llCheckOut.Location = new System.Drawing.Point(596, 34);
-            this.llCheckOut.Name = "llCheckOut";
-            this.llCheckOut.Size = new System.Drawing.Size(59, 16);
-            this.llCheckOut.TabIndex = 9;
-            this.llCheckOut.TabStop = true;
-            this.llCheckOut.Text = "Check in";
-            this.llCheckOut.Click += new System.EventHandler(this.llCheckOut_Click);
+            this.btnViewUsers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnViewUsers.BackColor = System.Drawing.Color.MistyRose;
+            this.btnViewUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewUsers.FlatAppearance.BorderSize = 0;
+            this.btnViewUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnViewUsers.Location = new System.Drawing.Point(368, 189);
+            this.btnViewUsers.Name = "btnViewUsers";
+            this.btnViewUsers.Size = new System.Drawing.Size(126, 28);
+            this.btnViewUsers.TabIndex = 10;
+            this.btnViewUsers.Text = "View users";
+            this.btnViewUsers.UseVisualStyleBackColor = false;
+            this.btnViewUsers.Click += new System.EventHandler(this.btnViewUsers_Click);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddUser.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddUser.FlatAppearance.BorderSize = 0;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnAddUser.Location = new System.Drawing.Point(57, 189);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(126, 28);
+            this.btnAddUser.TabIndex = 11;
+            this.btnAddUser.Text = "Add user";
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // ShopElectronics
             // 
@@ -162,7 +191,8 @@
             this.BackColor = System.Drawing.Color.Azure;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(701, 317);
-            this.Controls.Add(this.llCheckOut);
+            this.Controls.Add(this.btnAddUser);
+            this.Controls.Add(this.btnViewUsers);
             this.Controls.Add(this.llLogOut);
             this.Controls.Add(this.DeleteProduct);
             this.Controls.Add(this.label3);
@@ -195,6 +225,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DeleteProduct;
         private System.Windows.Forms.LinkLabel llLogOut;
-        private System.Windows.Forms.LinkLabel llCheckOut;
+        private System.Windows.Forms.Button btnViewUsers;
+        private System.Windows.Forms.Button btnAddUser;
     }
 }

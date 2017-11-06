@@ -29,15 +29,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.AddNewProduct = new System.Windows.Forms.Button();
-            this.PriceNew = new System.Windows.Forms.TextBox();
             this.NameNew = new System.Windows.Forms.TextBox();
             this.NameProductNew = new System.Windows.Forms.TextBox();
-            this.NumberNew = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();
+            this.numUpDownNumber = new System.Windows.Forms.NumericUpDown();
+            this.numUpDownPrice = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // AddNewProduct
@@ -48,20 +50,13 @@
             this.AddNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddNewProduct.ForeColor = System.Drawing.Color.Black;
-            this.AddNewProduct.Location = new System.Drawing.Point(175, 155);
+            this.AddNewProduct.Location = new System.Drawing.Point(187, 160);
             this.AddNewProduct.Name = "AddNewProduct";
             this.AddNewProduct.Size = new System.Drawing.Size(59, 27);
             this.AddNewProduct.TabIndex = 0;
             this.AddNewProduct.Text = "ADD";
             this.AddNewProduct.UseVisualStyleBackColor = false;
             this.AddNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
-            // 
-            // PriceNew
-            // 
-            this.PriceNew.Location = new System.Drawing.Point(186, 110);
-            this.PriceNew.Name = "PriceNew";
-            this.PriceNew.Size = new System.Drawing.Size(113, 20);
-            this.PriceNew.TabIndex = 5;
             // 
             // NameNew
             // 
@@ -76,13 +71,6 @@
             this.NameProductNew.Name = "NameProductNew";
             this.NameProductNew.Size = new System.Drawing.Size(119, 20);
             this.NameProductNew.TabIndex = 8;
-            // 
-            // NumberNew
-            // 
-            this.NumberNew.Location = new System.Drawing.Point(186, 47);
-            this.NumberNew.Name = "NumberNew";
-            this.NumberNew.Size = new System.Drawing.Size(113, 20);
-            this.NumberNew.TabIndex = 9;
             // 
             // label1
             // 
@@ -127,19 +115,63 @@
             // 
             // Exit
             // 
-            this.Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Exit.BackColor = System.Drawing.Color.Gainsboro;
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Exit.FlatAppearance.BorderSize = 0;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Exit.ForeColor = System.Drawing.Color.Black;
-            this.Exit.Location = new System.Drawing.Point(240, 155);
+            this.Exit.Location = new System.Drawing.Point(260, 160);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(59, 27);
             this.Exit.TabIndex = 14;
             this.Exit.Text = "EXIT";
             this.Exit.UseVisualStyleBackColor = false;
+            // 
+            // numUpDownNumber
+            // 
+            this.numUpDownNumber.Location = new System.Drawing.Point(179, 48);
+            this.numUpDownNumber.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.numUpDownNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDownNumber.Name = "numUpDownNumber";
+            this.numUpDownNumber.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownNumber.TabIndex = 15;
+            this.numUpDownNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numUpDownPrice
+            // 
+            this.numUpDownPrice.Location = new System.Drawing.Point(179, 111);
+            this.numUpDownPrice.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numUpDownPrice.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDownPrice.Name = "numUpDownPrice";
+            this.numUpDownPrice.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownPrice.TabIndex = 16;
+            this.numUpDownPrice.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // AddProduct
             // 
@@ -149,22 +181,25 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(331, 199);
+            this.Controls.Add(this.numUpDownPrice);
+            this.Controls.Add(this.numUpDownNumber);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.NumberNew);
             this.Controls.Add(this.NameProductNew);
             this.Controls.Add(this.NameNew);
-            this.Controls.Add(this.PriceNew);
             this.Controls.Add(this.AddNewProduct);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1280, 1024);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(347, 238);
             this.MinimumSize = new System.Drawing.Size(347, 238);
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProduct";
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,14 +208,14 @@
         #endregion
 
         private System.Windows.Forms.Button AddNewProduct;
-        private System.Windows.Forms.TextBox PriceNew;
         private System.Windows.Forms.TextBox NameNew;
         private System.Windows.Forms.TextBox NameProductNew;
-        private System.Windows.Forms.TextBox NumberNew;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.NumericUpDown numUpDownNumber;
+        private System.Windows.Forms.NumericUpDown numUpDownPrice;
     }
 }

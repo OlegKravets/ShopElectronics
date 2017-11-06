@@ -33,13 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.NumberBuyProduct = new System.Windows.Forms.TextBox();
             this.lbNumber = new System.Windows.Forms.ListBox();
             this.lbPrice = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnBuy = new System.Windows.Forms.Button();
+            this.numUpDownNumber = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // lbProduct
@@ -95,14 +96,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Select Number";
             // 
-            // NumberBuyProduct
-            // 
-            this.NumberBuyProduct.Location = new System.Drawing.Point(418, 50);
-            this.NumberBuyProduct.Name = "NumberBuyProduct";
-            this.NumberBuyProduct.Size = new System.Drawing.Size(109, 20);
-            this.NumberBuyProduct.TabIndex = 6;
-            this.NumberBuyProduct.Text = "1";
-            // 
             // lbNumber
             // 
             this.lbNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -156,7 +149,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(475, 235);
+            this.btnExit.Location = new System.Drawing.Point(484, 247);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(59, 27);
             this.btnExit.TabIndex = 16;
@@ -171,13 +164,35 @@
             this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnBuy.ForeColor = System.Drawing.Color.Black;
-            this.btnBuy.Location = new System.Drawing.Point(410, 235);
+            this.btnBuy.Location = new System.Drawing.Point(414, 247);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(59, 27);
             this.btnBuy.TabIndex = 15;
             this.btnBuy.Text = "BUY";
             this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // numUpDownNumber
+            // 
+            this.numUpDownNumber.Location = new System.Drawing.Point(418, 50);
+            this.numUpDownNumber.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numUpDownNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDownNumber.Name = "numUpDownNumber";
+            this.numUpDownNumber.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownNumber.TabIndex = 17;
+            this.numUpDownNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Buy
             // 
@@ -186,24 +201,26 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(555, 286);
+            this.Controls.Add(this.numUpDownNumber);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbNumber);
-            this.Controls.Add(this.NumberBuyProduct);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbFirm);
             this.Controls.Add(this.lbProduct);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(571, 325);
             this.Name = "Buy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buy";
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,12 +232,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox NumberBuyProduct;
         private System.Windows.Forms.ListBox lbNumber;
         private System.Windows.Forms.ListBox lbPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.NumericUpDown numUpDownNumber;
     }
 }

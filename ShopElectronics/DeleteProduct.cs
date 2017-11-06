@@ -17,12 +17,19 @@ namespace ShopElectronics
         object productNameDelete, firmDelete, numberDelete, priceDelete; //объекты грида
         int indexRow; //индекст строки в гриде
 
+        private void DeleteProduct_SizeChanged(object sender, EventArgs e)
+        {
+            this.ProductName.Width = (dataGridViewDelete.Size.Width / 4) -10;
+            this.NameFirm.Width = (dataGridViewDelete.Size.Width / 4) -10;
+            this.NumberProduct.Width = (dataGridViewDelete.Size.Width / 4) -10;
+            this.ProductPrice.Width = (dataGridViewDelete.Size.Width / 4) -10;
+        }
+
         public DeleteProduct()
         {
             InitializeComponent();
 
             dataGridViewDelete.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
-            Delete.Anchor = (AnchorStyles.Right | AnchorStyles.Bottom);
 
             DataDBShop.ViewData(dataGridViewDelete); //вывод данных на экран
         }

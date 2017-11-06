@@ -22,16 +22,6 @@ namespace ShopElectronics
 
     class User
     {
-        static private string passwordAdmin = "111";
-
-        static public string PasswordAdmin
-        {
-            get
-            {
-                return passwordAdmin;
-            }
-        }
-
         //поля
         //-------------------------------------------------------------------------
 
@@ -57,7 +47,7 @@ namespace ShopElectronics
 
         static public bool CheckUser(string login, string pass)
         {
-            using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
+            using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db;"))
             {
                 using(SQLiteCommand command = new SQLiteCommand(connection))
                 {
@@ -138,6 +128,31 @@ namespace ShopElectronics
                     connection.Close();
                 }
                 return true;
+            }
+        }
+
+        static public void ViewUsers(DataGridView grid)
+        {
+            using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
+            {
+                using(SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    connection.Open();
+
+                    //подготовка запроса на выборку из главной таблицы
+                    command.CommandText = "SELECT * FROM Users";
+
+                    //чтение данных с главной таблицы
+                    using(SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            grid.Rows.Add(reader["Login"], reader["Password"], reader["Admin"]);
+                        }
+                        reader.Close();
+                    }
+                }
+                connection.Close();
             }
         }
 
