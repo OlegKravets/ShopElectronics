@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShopElectronics
@@ -15,7 +8,7 @@ namespace ShopElectronics
         public AddUser(TypeUser type)
         {
             InitializeComponent();
-            tbPassword.PasswordChar = '*';
+
             rbSimpleUser.Checked = true;
 
             if(type == TypeUser.simpleUser)
@@ -24,13 +17,30 @@ namespace ShopElectronics
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(tbLogin.Text) || string.IsNullOrEmpty(tbPassword.Text))
+            if(string.IsNullOrEmpty(tbLogin.Text) || string.IsNullOrEmpty(tbPassword.Text) || 
+               string.IsNullOrEmpty(tbEmail.Text) || string.IsNullOrEmpty(tbConfirmPassword.Text))
             {
                 MessageBox.Show("Not all fields are filled out!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if(User.SearchUser(tbLogin.Text))
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(tbEmail.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Email is not valid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(tbPassword.Text != tbConfirmPassword.Text)
+            {
+                MessageBox.Show("Confirmation password does not match!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(User.SearchUser(tbLogin.Text, tbEmail.Text))
             {
                 MessageBox.Show("Such user already exists!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -38,10 +48,13 @@ namespace ShopElectronics
 
             string typeUser = rbAdmin.Checked == true ? "true" : "false";
 
-            if(User.AddUser(tbLogin.Text, tbPassword.Text, typeUser))
-                DialogResult = DialogResult.OK;
-            else
-                DialogResult = DialogResult.Cancel;
+            if(User.AddUser(tbLogin.Text, tbPassword.Text, typeUser, tbEmail.Text) == false)
+            {
+                MessageBox.Show("Such user already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult = DialogResult.OK;
         }
     }
 }

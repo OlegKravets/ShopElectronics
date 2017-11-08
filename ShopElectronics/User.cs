@@ -20,7 +20,7 @@ namespace ShopElectronics
         simpleUser
     }
 
-    class User
+    static class User
     {
         //поля
         //-------------------------------------------------------------------------
@@ -65,7 +65,7 @@ namespace ShopElectronics
                             {
                                 if(reader["Password"].ToString() == pass)
                                 {
-                                    typeUser = reader["Admin"].ToString() == "true"? TypeUser.admin: TypeUser.simpleUser;
+                                    typeUser = reader["Admin"].ToString() == "true" ? TypeUser.admin : TypeUser.simpleUser;
                                     return true;
                                 }
                             }
@@ -78,7 +78,7 @@ namespace ShopElectronics
             return false;
         }
 
-        static public bool SearchUser(string log)
+        static public bool SearchUser(string log, string email)
         {
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
             {
@@ -94,7 +94,7 @@ namespace ShopElectronics
                     {
                         while(reader.Read())
                         {
-                            if(reader["Login"].ToString() == log)
+                            if(reader["Login"].ToString() == log && reader["Email"].ToString() == email)
                                 return true;
                         }
                         reader.Close();
@@ -106,8 +106,11 @@ namespace ShopElectronics
             return false;
         }
 
-        static public bool AddUser(string log, string pass, string typeUser)
+        static public bool AddUser(string log, string pass, string typeUser, string email)
         {
+            if(SearchUser(log, email) == true)
+                return false;
+
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
             {
                 using(SQLiteCommand command = new SQLiteCommand(connection))
@@ -115,20 +118,13 @@ namespace ShopElectronics
                     connection.Open();
 
                     //подготовка запроса на добавление нового пользователя
-                    try
-                    {
-                        command.CommandText = string.Format("INSERT INTO Users(Login, Password, Admin) Values('{0}', '{1}', '{2}')", log, pass, typeUser);
+                        command.CommandText = string.Format("INSERT INTO Users(Login, Password, Admin, Email) Values('{0}', '{1}', '{2}', '{3}')", log, pass, typeUser, email);
                         command.ExecuteNonQuery();
-                    }
-                    catch
-                    {
-                        return false;
-
-                    }
-                    connection.Close();
                 }
-                return true;
+                connection.Close();
             }
+
+            return true;
         }
 
         static public void ViewUsers(DataGridView grid)
@@ -147,7 +143,7 @@ namespace ShopElectronics
                     {
                         while(reader.Read())
                         {
-                            grid.Rows.Add(reader["Login"], reader["Password"], reader["Admin"]);
+                            grid.Rows.Add(reader["Login"], reader["Password"], reader["Admin"], reader["Email"]);
                         }
                         reader.Close();
                     }
@@ -156,6 +152,38 @@ namespace ShopElectronics
             }
         }
 
+        static public void DeleteUser(string log)
+        {
+            using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
+            {
+                using(SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    connection.Open();
+
+                    //подготовка запроса на добавление нового пользователя
+                    command.CommandText = string.Format("DELETE FROM Users WHERE Login = '{0}'", log);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        static public void MakeAdmin(string log)
+        {
+            using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
+            {
+                using(SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    connection.Open();
+
+                    //подготовка запроса на добавление нового пользователя
+                    command.CommandText = string.Format("UPDATE Users SET Admin = 'true' WHERE Login = '{0}'", log);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+            MessageBox.Show(string.Format("User '{0}' was successfully state admin!", "Admin", MessageBoxButtons.OK, MessageBoxIcon.Information), log);
+        }
         //-------------------------------------------------------------------------
     }
 }

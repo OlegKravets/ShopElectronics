@@ -308,7 +308,7 @@ namespace ShopElectronics
             }
         }
 
-        static public void ExportDBInExcelFile(string pathSaveFile, ViewProducts.Menu m)
+        static public void ExportDBInExcelFile(string pathSaveFile, ShopElectronics.ItemMenu m)
         {
             List<string> products = new List<string>(); //набор данных с таблицы товаров
             int lineInExcel = 2; // номер строки в файле Eхcel
@@ -394,7 +394,7 @@ namespace ShopElectronics
             //сохранение Excel по указанному пути
             xlWorkBook.SaveAs(pathSaveFile);
 
-            if(m == ViewProducts.Menu.print)
+            if(m == ShopElectronics.ItemMenu.print)
             {
                 //Выделение ячеек для печати
                 excelCells = workSheet.get_Range("B2", string.Format("E{0}", lineInExcel));

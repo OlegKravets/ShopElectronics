@@ -50,10 +50,10 @@
             this.AddNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddNewProduct.ForeColor = System.Drawing.Color.Black;
-            this.AddNewProduct.Location = new System.Drawing.Point(187, 160);
+            this.AddNewProduct.Location = new System.Drawing.Point(172, 147);
             this.AddNewProduct.Name = "AddNewProduct";
             this.AddNewProduct.Size = new System.Drawing.Size(59, 27);
-            this.AddNewProduct.TabIndex = 0;
+            this.AddNewProduct.TabIndex = 5;
             this.AddNewProduct.Text = "ADD";
             this.AddNewProduct.UseVisualStyleBackColor = false;
             this.AddNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
@@ -63,14 +63,14 @@
             this.NameNew.Location = new System.Drawing.Point(22, 110);
             this.NameNew.Name = "NameNew";
             this.NameNew.Size = new System.Drawing.Size(120, 20);
-            this.NameNew.TabIndex = 7;
+            this.NameNew.TabIndex = 2;
             // 
             // NameProductNew
             // 
             this.NameProductNew.Location = new System.Drawing.Point(22, 47);
             this.NameProductNew.Name = "NameProductNew";
             this.NameProductNew.Size = new System.Drawing.Size(119, 20);
-            this.NameProductNew.TabIndex = 8;
+            this.NameProductNew.TabIndex = 1;
             // 
             // label1
             // 
@@ -89,28 +89,28 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label2.Location = new System.Drawing.Point(18, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 22);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Name";
+            this.label2.Size = new System.Drawing.Size(45, 22);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Firm";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label3.Location = new System.Drawing.Point(182, 22);
+            this.label3.Location = new System.Drawing.Point(175, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 22);
-            this.label3.TabIndex = 12;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Number";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label4.Location = new System.Drawing.Point(182, 85);
+            this.label4.Location = new System.Drawing.Point(175, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 22);
-            this.label4.TabIndex = 13;
+            this.label4.TabIndex = 7;
             this.label4.Text = "Price";
             // 
             // Exit
@@ -122,10 +122,10 @@
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Exit.ForeColor = System.Drawing.Color.Black;
-            this.Exit.Location = new System.Drawing.Point(260, 160);
+            this.Exit.Location = new System.Drawing.Point(245, 147);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(59, 27);
-            this.Exit.TabIndex = 14;
+            this.Exit.TabIndex = 6;
             this.Exit.Text = "EXIT";
             this.Exit.UseVisualStyleBackColor = false;
             // 
@@ -144,7 +144,7 @@
             0});
             this.numUpDownNumber.Name = "numUpDownNumber";
             this.numUpDownNumber.Size = new System.Drawing.Size(120, 20);
-            this.numUpDownNumber.TabIndex = 15;
+            this.numUpDownNumber.TabIndex = 3;
             this.numUpDownNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -166,7 +166,7 @@
             0});
             this.numUpDownPrice.Name = "numUpDownPrice";
             this.numUpDownPrice.Size = new System.Drawing.Size(120, 20);
-            this.numUpDownPrice.TabIndex = 16;
+            this.numUpDownPrice.TabIndex = 4;
             this.numUpDownPrice.Value = new decimal(new int[] {
             1,
             0,
@@ -180,7 +180,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(331, 199);
+            this.ClientSize = new System.Drawing.Size(321, 189);
             this.Controls.Add(this.numUpDownPrice);
             this.Controls.Add(this.numUpDownNumber);
             this.Controls.Add(this.Exit);
@@ -193,8 +193,8 @@
             this.Controls.Add(this.AddNewProduct);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(347, 238);
-            this.MinimumSize = new System.Drawing.Size(347, 238);
+            this.MaximumSize = new System.Drawing.Size(337, 228);
+            this.MinimumSize = new System.Drawing.Size(337, 228);
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProduct";

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShopElectronics
@@ -14,6 +9,12 @@ namespace ShopElectronics
     {
         private TypeUser typeUser; //тип пользователя
         private string login; //логин пользователя
+
+        public enum ItemMenu
+        {
+            print,
+            export
+        }
 
         public ShopElectronics(TypeUser tu, string log)
         {
@@ -29,7 +30,14 @@ namespace ShopElectronics
         private void AddProduct_Click(object sender, EventArgs e)
         {
             AddProduct ap = new AddProduct();
-            ap.ShowDialog();
+            if(ap.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView.Rows.Clear();
+                DataDBShop.ViewData(dataGridView);
+
+                ap.Close();
+            }
+
         }
 
         private void BuyProduct_Click(object sender, EventArgs e)
@@ -38,16 +46,21 @@ namespace ShopElectronics
             buyProduct.ShowDialog();
         }
 
-        private void ViewProducts_Click(object sender, EventArgs e)
-        {
-            ViewProducts viewProducts = new ViewProducts();
-            viewProducts.ShowDialog();
-        }
-
         private void DeleteProduct_Click(object sender, EventArgs e)
         {
-            DeleteProduct delete = new DeleteProduct();
-            delete.ShowDialog();
+            //грид со всеми данными о товарах в магазине
+            DataGridViewCell viewCell = dataGridView.CurrentCell;
+            int indexRow = viewCell.RowIndex; //индекст строки в гриде
+
+            //занесение данных о выбранном товаре
+            object productNameDelete = dataGridView.Rows[indexRow].Cells[0].Value;
+            object firmDelete = dataGridView.Rows[indexRow].Cells[1].Value;
+            object numberDelete = dataGridView.Rows[indexRow].Cells[2].Value;
+            object priceDelete = dataGridView.Rows[indexRow].Cells[3].Value;
+
+            //удаление товара
+            DataDBShop.DeleteProduct(productNameDelete, firmDelete, numberDelete,
+                                     priceDelete, dataGridView);
         }
 
         private void ShopElectronics_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,15 +70,21 @@ namespace ShopElectronics
 
         private void ShopElectronics_Load(object sender, EventArgs e)
         {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.AddProduct, "Add new product");
+            toolTip1.SetToolTip(this.DeleteProduct, "Delete product");
+            toolTip1.SetToolTip(this.BuyProduct, "Buy product");
+
             if(typeUser == TypeUser.simpleUser)
             {
                 AddProduct.Visible = false;
                 DeleteProduct.Visible = false;
                 btnViewUsers.Visible = false;
 
-                ViewProducts.Location = new Point(AddProduct.Location.X, AddProduct.Location.Y);
                 BuyProduct.Location = new Point(DeleteProduct.Location.X, DeleteProduct.Location.Y);
             }
+
+            DataDBShop.ViewData(dataGridView);
         }
 
         private void llLogOut_Click(object sender, EventArgs e)
@@ -77,17 +96,38 @@ namespace ShopElectronics
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            ViewUsers vu = new ViewUsers();
+            UserManager vu = new UserManager(typeUser);
             vu.ShowDialog();
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e)
+        private void PrintProducts_Click(object sender, EventArgs e)
         {
-            AddUser au = new AddUser(typeUser);
-            if(au.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show("The user was successfully added!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+        }
+
+        private void ExportProducts_Click(object sender, EventArgs e)
+        {
+            //путь к месту сохранения
+            string path = string.Empty;
+
+            //окно для выбора места для сохранения
+            SaveFileDialog svd = new SaveFileDialog();
+            svd.Filter = "Документ Excel|*.xlsx, *.xls";
+            svd.FileName = "ShopElectronicsDB.xlsx";
+
+            if(svd.ShowDialog() != DialogResult.OK)
+                return;
+
+            path = svd.FileName;
+            DataDBShop.ExportDBInExcelFile(path, ItemMenu.export);
+        }
+
+        private void ShopElectronics_SizeChanged(object sender, EventArgs e)
+        {
+            this.NameProduct.Width = (dataGridView.Size.Width /4) +2;
+            this.Firm.Width = (dataGridView.Size.Width / 4) -2;
+            this.Number.Width = (dataGridView.Size.Width / 4) -20;
+            this.Price.Width = (dataGridView.Size.Width / 4) -23;
         }
     }
 }

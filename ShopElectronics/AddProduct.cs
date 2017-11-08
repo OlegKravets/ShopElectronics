@@ -37,7 +37,9 @@ namespace ShopElectronics
             int number = (int)numUpDownNumber.Value; //новое кол-во продукта
             int price = (int) numUpDownPrice.Value; //новая цена
 
-            DataDBShop.AddNewProduct(nameProduct, name, number, price); 
+            DataDBShop.AddNewProduct(nameProduct, name, number, price);
+
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
