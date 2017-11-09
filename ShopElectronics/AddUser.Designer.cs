@@ -70,7 +70,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(175, 20);
-            this.tbPassword.TabIndex = 2;
+            this.tbPassword.TabIndex = 3;
             // 
             // tbLogin
             // 
@@ -82,30 +82,32 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCancel.Location = new System.Drawing.Point(269, 232);
+            this.btnCancel.Location = new System.Drawing.Point(276, 238);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 28);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Size = new System.Drawing.Size(71, 28);
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // btnApply
             // 
-            this.btnApply.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnApply.BackColor = System.Drawing.Color.Azure;
+            this.btnApply.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnApply.BackgroundImage")));
+            this.btnApply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnApply.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnApply.Location = new System.Drawing.Point(178, 232);
+            this.btnApply.Location = new System.Drawing.Point(229, 238);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 28);
-            this.btnApply.TabIndex = 6;
-            this.btnApply.Text = "Apply";
+            this.btnApply.Size = new System.Drawing.Size(31, 28);
+            this.btnApply.TabIndex = 7;
             this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
@@ -125,7 +127,7 @@
             this.rbSimpleUser.Location = new System.Drawing.Point(232, 67);
             this.rbSimpleUser.Name = "rbSimpleUser";
             this.rbSimpleUser.Size = new System.Drawing.Size(81, 17);
-            this.rbSimpleUser.TabIndex = 4;
+            this.rbSimpleUser.TabIndex = 5;
             this.rbSimpleUser.TabStop = true;
             this.rbSimpleUser.Text = "Simple User";
             this.rbSimpleUser.UseVisualStyleBackColor = true;
@@ -136,7 +138,7 @@
             this.rbAdmin.Location = new System.Drawing.Point(232, 90);
             this.rbAdmin.Name = "rbAdmin";
             this.rbAdmin.Size = new System.Drawing.Size(54, 17);
-            this.rbAdmin.TabIndex = 5;
+            this.rbAdmin.TabIndex = 6;
             this.rbAdmin.TabStop = true;
             this.rbAdmin.Text = "Admin";
             this.rbAdmin.UseVisualStyleBackColor = true;
@@ -157,7 +159,7 @@
             this.tbConfirmPassword.Name = "tbConfirmPassword";
             this.tbConfirmPassword.PasswordChar = '*';
             this.tbConfirmPassword.Size = new System.Drawing.Size(175, 20);
-            this.tbConfirmPassword.TabIndex = 3;
+            this.tbConfirmPassword.TabIndex = 4;
             // 
             // label5
             // 
@@ -174,14 +176,14 @@
             this.tbEmail.Location = new System.Drawing.Point(16, 111);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(175, 20);
-            this.tbEmail.TabIndex = 10;
+            this.tbEmail.TabIndex = 2;
             // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(360, 278);
+            this.ClientSize = new System.Drawing.Size(360, 279);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label4);

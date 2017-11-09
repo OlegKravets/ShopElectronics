@@ -1,4 +1,7 @@
-﻿namespace ShopElectronics
+﻿using System;
+using System.ComponentModel;
+
+namespace ShopElectronics
 {
     partial class AddProduct
     {
@@ -29,8 +32,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.AddNewProduct = new System.Windows.Forms.Button();
-            this.NameNew = new System.Windows.Forms.TextBox();
-            this.NameProductNew = new System.Windows.Forms.TextBox();
+            this.tbNameFirm = new System.Windows.Forms.TextBox();
+            this.tbNameProduct = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,33 +47,34 @@
             // 
             // AddNewProduct
             // 
-            this.AddNewProduct.BackColor = System.Drawing.Color.Gainsboro;
+            this.AddNewProduct.BackColor = System.Drawing.Color.Azure;
+            this.AddNewProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddNewProduct.BackgroundImage")));
+            this.AddNewProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddNewProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddNewProduct.FlatAppearance.BorderSize = 0;
             this.AddNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddNewProduct.ForeColor = System.Drawing.Color.Black;
-            this.AddNewProduct.Location = new System.Drawing.Point(172, 147);
+            this.AddNewProduct.Location = new System.Drawing.Point(186, 147);
             this.AddNewProduct.Name = "AddNewProduct";
-            this.AddNewProduct.Size = new System.Drawing.Size(59, 27);
+            this.AddNewProduct.Size = new System.Drawing.Size(30, 30);
             this.AddNewProduct.TabIndex = 5;
-            this.AddNewProduct.Text = "ADD";
             this.AddNewProduct.UseVisualStyleBackColor = false;
             this.AddNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
             // 
-            // NameNew
+            // tbNameFirm
             // 
-            this.NameNew.Location = new System.Drawing.Point(22, 110);
-            this.NameNew.Name = "NameNew";
-            this.NameNew.Size = new System.Drawing.Size(120, 20);
-            this.NameNew.TabIndex = 2;
+            this.tbNameFirm.Location = new System.Drawing.Point(22, 110);
+            this.tbNameFirm.Name = "tbNameFirm";
+            this.tbNameFirm.Size = new System.Drawing.Size(120, 20);
+            this.tbNameFirm.TabIndex = 2;
             // 
-            // NameProductNew
+            // tbNameProduct
             // 
-            this.NameProductNew.Location = new System.Drawing.Point(22, 47);
-            this.NameProductNew.Name = "NameProductNew";
-            this.NameProductNew.Size = new System.Drawing.Size(119, 20);
-            this.NameProductNew.TabIndex = 1;
+            this.tbNameProduct.Location = new System.Drawing.Point(23, 47);
+            this.tbNameProduct.Name = "tbNameProduct";
+            this.tbNameProduct.Size = new System.Drawing.Size(119, 20);
+            this.tbNameProduct.TabIndex = 1;
             // 
             // label1
             // 
@@ -116,22 +120,23 @@
             // Exit
             // 
             this.Exit.BackColor = System.Drawing.Color.Gainsboro;
+            this.Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Exit.FlatAppearance.BorderSize = 0;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Exit.ForeColor = System.Drawing.Color.Black;
-            this.Exit.Location = new System.Drawing.Point(245, 147);
+            this.Exit.Location = new System.Drawing.Point(234, 147);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(59, 27);
+            this.Exit.Size = new System.Drawing.Size(65, 27);
             this.Exit.TabIndex = 6;
-            this.Exit.Text = "EXIT";
+            this.Exit.Text = "Cancel";
             this.Exit.UseVisualStyleBackColor = false;
             // 
             // numUpDownNumber
             // 
-            this.numUpDownNumber.Location = new System.Drawing.Point(179, 48);
+            this.numUpDownNumber.Location = new System.Drawing.Point(179, 47);
             this.numUpDownNumber.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -153,7 +158,7 @@
             // 
             // numUpDownPrice
             // 
-            this.numUpDownPrice.Location = new System.Drawing.Point(179, 111);
+            this.numUpDownPrice.Location = new System.Drawing.Point(179, 110);
             this.numUpDownPrice.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -188,8 +193,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.NameProductNew);
-            this.Controls.Add(this.NameNew);
+            this.Controls.Add(this.tbNameProduct);
+            this.Controls.Add(this.tbNameFirm);
             this.Controls.Add(this.AddNewProduct);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -204,12 +209,11 @@
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.Button AddNewProduct;
-        private System.Windows.Forms.TextBox NameNew;
-        private System.Windows.Forms.TextBox NameProductNew;
+        private System.Windows.Forms.TextBox tbNameFirm;
+        private System.Windows.Forms.TextBox tbNameProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

@@ -177,13 +177,6 @@ namespace ShopElectronics
                     }
                     reader.Close();
                 }
-
-                MessageBox.Show("Item successfully deleted", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                dataGridViewDelete.Rows.Clear(); //очистка грида
-                ViewData(dataGridViewDelete);//вывод данных в грид после его модификации 
-
-                connection.Close();//закрыть соединение с БД
             }
         }
 
@@ -234,7 +227,7 @@ namespace ShopElectronics
             }
         }
 
-        static public void CheckNumberProduct(string firmProduct, string nameProduct, int numberBuyProducts)
+        static public bool CheckNumberProduct(string firmProduct, string nameProduct, int numberBuyProducts)
         {
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
             {
@@ -250,22 +243,18 @@ namespace ShopElectronics
                         while(reader.Read())
                         {
                             if(reader["Name"].ToString() == firmProduct && int.Parse(reader["Number"].ToString()) < numberBuyProducts)
-                            {
-                                MessageBox.Show("Excuse me. The product is out of stock!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
+                                return false;
                         }
                         reader.Close();
                     }
                 }
                 connection.Close();//закрыть соединение с БД
             }
+            return true;
         }
 
-        static public int BuyProduct(string nameProduct, int numberBuyProducts,
-                                      string firmProduct, int numberProduct,
-                                      int priceProduct, ListBox lbFirm,
-                                      ListBox lbNumber, ListBox lbPrice)
+        static public void BuyProduct(string nameProduct, string firmProduct,
+                                     int numberBuyProducts, int numberProduct)
         {
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
             {
@@ -278,33 +267,7 @@ namespace ShopElectronics
                                           nameProduct, numberBuyProducts, firmProduct);
 
                     UpdateTable(command, query);
-
-                    //подготовка запроса на выборку из дочерней таблицы
-                    command.CommandText = string.Format("SELECT * FROM {0}", nameProduct);
-
-                    using(SQLiteDataReader reader = command.ExecuteReader()) //чтение данных с таблицы
-                    {
-                        while(reader.Read())
-                        {
-                            if(reader["Name"].ToString() == firmProduct)
-                            {
-                                numberProduct = int.Parse(reader["Number"].ToString());
-                                priceProduct = int.Parse(reader["Price"].ToString());
-                            }
-                        }
-                        reader.Close();
-                    }
-
-                    //очистка табличек
-                    lbFirm.Items.Clear();
-                    lbNumber.Items.Clear();
-                    lbPrice.Items.Clear();
-
-                    EnterValues(command, lbFirm, lbNumber, lbPrice);
                 }
-                connection.Close();//закрыть БД
-
-                return priceProduct * numberBuyProducts;
             }
         }
 

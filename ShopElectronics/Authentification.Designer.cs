@@ -40,31 +40,33 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogIn.BackColor = System.Drawing.Color.Azure;
+            this.btnLogIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogIn.BackgroundImage")));
+            this.btnLogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogIn.FlatAppearance.BorderSize = 0;
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnLogIn.Location = new System.Drawing.Point(104, 171);
+            this.btnLogIn.Location = new System.Drawing.Point(173, 171);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 28);
+            this.btnLogIn.Size = new System.Drawing.Size(28, 28);
             this.btnLogIn.TabIndex = 3;
-            this.btnLogIn.Text = "LOG IN";
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCancel.Location = new System.Drawing.Point(193, 171);
+            this.btnCancel.Location = new System.Drawing.Point(216, 171);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 28);
+            this.btnCancel.Size = new System.Drawing.Size(44, 28);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "EXIT";
+            this.btnCancel.Text = "Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -79,9 +81,9 @@
             // 
             this.tbPassword.Location = new System.Drawing.Point(40, 127);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(220, 20);
             this.tbPassword.TabIndex = 2;
-            tbPassword.PasswordChar = '*';
             // 
             // label1
             // 
@@ -119,7 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(280, 211);
+            this.ClientSize = new System.Drawing.Size(280, 216);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

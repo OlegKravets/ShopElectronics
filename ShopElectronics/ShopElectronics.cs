@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace ShopElectronics
@@ -32,9 +31,7 @@ namespace ShopElectronics
             AddProduct ap = new AddProduct();
             if(ap.ShowDialog() == DialogResult.OK)
             {
-                dataGridView.Rows.Clear();
-                DataDBShop.ViewData(dataGridView);
-
+                UpdateDataInGrid();
                 ap.Close();
             }
 
@@ -42,12 +39,32 @@ namespace ShopElectronics
 
         private void BuyProduct_Click(object sender, EventArgs e)
         {
-            Buy buyProduct = new Buy();
-            buyProduct.ShowDialog();
+            //грид со всеми данными о товарах в магазине
+            DataGridViewCell viewCell = dataGridView.CurrentCell;
+            int indexRow = viewCell.RowIndex; //индекст строки в гриде
+
+            //занесение данных о выбранном товаре
+            object productName = dataGridView.Rows[indexRow].Cells[0].Value;
+            object firm = dataGridView.Rows[indexRow].Cells[1].Value;
+            object priceProd = dataGridView.Rows[indexRow].Cells[3].Value;
+
+            int price = int.Parse(priceProd.ToString());
+
+            Buy buyProduct = new Buy(productName.ToString(), firm.ToString(), price);
+            if(buyProduct.ShowDialog() == DialogResult.OK)
+            {
+                UpdateDataInGrid();
+                buyProduct.Close();
+            }
         }
 
         private void DeleteProduct_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(dr == DialogResult.No)
+                return;
+
             //грид со всеми данными о товарах в магазине
             DataGridViewCell viewCell = dataGridView.CurrentCell;
             int indexRow = viewCell.RowIndex; //индекст строки в гриде
@@ -61,6 +78,10 @@ namespace ShopElectronics
             //удаление товара
             DataDBShop.DeleteProduct(productNameDelete, firmDelete, numberDelete,
                                      priceDelete, dataGridView);
+
+            MessageBox.Show("Item successfully deleted", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            UpdateDataInGrid();
         }
 
         private void ShopElectronics_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,6 +95,7 @@ namespace ShopElectronics
             toolTip1.SetToolTip(this.AddProduct, "Add new product");
             toolTip1.SetToolTip(this.DeleteProduct, "Delete product");
             toolTip1.SetToolTip(this.BuyProduct, "Buy product");
+            toolTip1.SetToolTip(this.btnViewUsers, "Manager users");
 
             if(typeUser == TypeUser.simpleUser)
             {
@@ -81,7 +103,7 @@ namespace ShopElectronics
                 DeleteProduct.Visible = false;
                 btnViewUsers.Visible = false;
 
-                BuyProduct.Location = new Point(DeleteProduct.Location.X, DeleteProduct.Location.Y);
+                BuyProduct.Location = new Point(AddProduct.Location.X, AddProduct.Location.Y);
             }
 
             DataDBShop.ViewData(dataGridView);
@@ -96,7 +118,7 @@ namespace ShopElectronics
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UserManager vu = new UserManager(typeUser);
+            UserManager vu = new UserManager(login);
             vu.ShowDialog();
         }
 
@@ -122,12 +144,18 @@ namespace ShopElectronics
             DataDBShop.ExportDBInExcelFile(path, ItemMenu.export);
         }
 
-        private void ShopElectronics_SizeChanged(object sender, EventArgs e)
+        private void ShopElectronics_SizeChanged_1(object sender, EventArgs e)
         {
-            this.NameProduct.Width = (dataGridView.Size.Width /4) +2;
-            this.Firm.Width = (dataGridView.Size.Width / 4) -2;
-            this.Number.Width = (dataGridView.Size.Width / 4) -20;
-            this.Price.Width = (dataGridView.Size.Width / 4) -23;
+            this.NameProduct.Width = (dataGridView.Size.Width / 4) + 2;
+            this.Firm.Width = (dataGridView.Size.Width / 4) - 2;
+            this.Number.Width = (dataGridView.Size.Width / 4) - 20;
+            this.Price.Width = (dataGridView.Size.Width / 4) - 23;
+        }
+
+        private void UpdateDataInGrid()
+        {
+            dataGridView.Rows.Clear();
+            DataDBShop.ViewData(dataGridView);
         }
     }
 }

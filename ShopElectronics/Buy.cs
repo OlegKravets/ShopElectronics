@@ -15,60 +15,44 @@ namespace ShopElectronics
     {
         private string nameProduct;
         private string firmProduct;
+        private int priceProd;
 
-        public Buy()
+        public Buy(string prod, string firm, int price)
         {
             InitializeComponent();
 
-            DataDBShop.InputDateWithTable(lbProduct, lbFirm, lbNumber, lbPrice, "Product");
-        }
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.btnBuy, "Buy product");
+            toolTip1.SetToolTip(this.btnExit, "Return to main page");
 
-        private void listBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //очистка таблиц
-            lbFirm.Items.Clear();
-            lbNumber.Items.Clear();
-            lbPrice.Items.Clear();
-
-            nameProduct = lbProduct.Text.ToString(); //вытянуть название, которое выбрал пользователь
-
-            DataDBShop.InputDateWithTable(lbProduct, lbFirm, lbNumber, lbPrice, nameProduct);
+            nameProduct = prod;
+            firmProduct = firm;
+            priceProd = price;
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            int numberProduct = 0;
-            int priceProduct = 0;
-            int numberBuyProducts = (int)numUpDownNumber.Value;
-
-            firmProduct = lbFirm.Text;
-
-            if(string.IsNullOrEmpty(lbProduct.Text))
-            {
-                MessageBox.Show("Select product!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if(string.IsNullOrEmpty(firmProduct))
-            {
-                MessageBox.Show("Select firm!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            int numberBuyProduct = (int) numUpDownNumber.Value;
 
             //проверка на достаточное наличие товара для клиента
             //-----------------------------------------------------------------------------
 
-            DataDBShop.CheckNumberProduct(firmProduct, nameProduct, numberBuyProducts);
+            if(!DataDBShop.CheckNumberProduct(firmProduct, nameProduct, numberBuyProduct))
+            {
+                MessageBox.Show("Excuse me. The product is out of stock!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             //-----------------------------------------------------------------------------
 
             //покупка и итоговая цена
-            int finishPrice = DataDBShop.BuyProduct(nameProduct, numberBuyProducts, 
-                                                    firmProduct, numberProduct, 
-                                                    priceProduct, lbFirm, 
-                                                    lbNumber, lbPrice);
+            DataDBShop.BuyProduct(nameProduct, firmProduct, numberBuyProduct, priceProd);
+
+            int finishPrice = priceProd * numberBuyProduct;
 
             MessageBox.Show(string.Format("The product was successfully purchased. Amount to be paid ${0} ", finishPrice), "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            DialogResult = DialogResult.OK;
         }
     }
 }

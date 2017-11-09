@@ -40,9 +40,8 @@ D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курса�
 D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.AddUser.resources
 D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.Authentification.resources
 D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.Buy.resources
-D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.DeleteProduct.resources
 D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.Properties.Resources.resources
 D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.ShopElectronics.resources
-D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.ViewProducts.resources
-D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.ViewUsers.resources
 D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.csproj.GenerateResource.Cache
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.UserManager.resources
+D:\Мой документы\Олег\Универ\3 курс\СПЗ\Курсач\ShopElectronics\ShopElectronics\obj\Release\ShopElectronics.EditUser.resources

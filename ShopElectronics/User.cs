@@ -118,8 +118,8 @@ namespace ShopElectronics
                     connection.Open();
 
                     //подготовка запроса на добавление нового пользователя
-                        command.CommandText = string.Format("INSERT INTO Users(Login, Password, Admin, Email) Values('{0}', '{1}', '{2}', '{3}')", log, pass, typeUser, email);
-                        command.ExecuteNonQuery();
+                    command.CommandText = string.Format("INSERT INTO Users(Login, Password, Admin, Email) Values('{0}', '{1}', '{2}', '{3}')", log, pass, typeUser, email);
+                    command.ExecuteNonQuery();
                 }
                 connection.Close();
             }
@@ -168,7 +168,7 @@ namespace ShopElectronics
             }
         }
 
-        static public void MakeAdmin(string log)
+        static public void UpdateUser(string login, string newlogin, string password, string email, string admin)
         {
             using(SQLiteConnection connection = new SQLiteConnection("data source=ElectronicsProduct.db"))
             {
@@ -177,13 +177,12 @@ namespace ShopElectronics
                     connection.Open();
 
                     //подготовка запроса на добавление нового пользователя
-                    command.CommandText = string.Format("UPDATE Users SET Admin = 'true' WHERE Login = '{0}'", log);
+                    command.CommandText = string.Format("UPDATE Users SET Login='{1}', Password='{2}', Admin='{3}', Email='{4}' WHERE Login = '{0}'", login, newlogin, password, admin, email);
                     command.ExecuteNonQuery();
                 }
                 connection.Close();
             }
-            MessageBox.Show(string.Format("User '{0}' was successfully state admin!", "Admin", MessageBoxButtons.OK, MessageBoxIcon.Information), log);
         }
-        //-------------------------------------------------------------------------
     }
 }
+

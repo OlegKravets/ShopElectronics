@@ -5,14 +5,15 @@ namespace ShopElectronics
 {
     public partial class AddUser : Form
     {
-        public AddUser(TypeUser type)
+        public AddUser()
         {
             InitializeComponent();
 
-            rbSimpleUser.Checked = true;
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.btnApply, "Add new user");
+            toolTip1.SetToolTip(this.btnCancel, "Return to main page");
 
-            if(type == TypeUser.simpleUser)
-                rbAdmin.Visible = false;
+            rbSimpleUser.Checked = true;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
