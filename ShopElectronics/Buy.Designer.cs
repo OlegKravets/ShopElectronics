@@ -56,7 +56,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(78, 81);
+            this.btnExit.Location = new System.Drawing.Point(85, 81);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(64, 27);
             this.btnExit.TabIndex = 16;
@@ -65,18 +65,18 @@
             // 
             // btnBuy
             // 
-            this.btnBuy.BackColor = System.Drawing.Color.Azure;
-            this.btnBuy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuy.BackgroundImage")));
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(230)))), ((int)(((byte)(137)))));
             this.btnBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuy.FlatAppearance.BorderSize = 0;
             this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnBuy.ForeColor = System.Drawing.Color.Black;
-            this.btnBuy.Location = new System.Drawing.Point(33, 81);
+            this.btnBuy.Location = new System.Drawing.Point(12, 81);
             this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(30, 27);
+            this.btnBuy.Size = new System.Drawing.Size(64, 27);
             this.btnBuy.TabIndex = 15;
+            this.btnBuy.Text = "Buy";
             this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
@@ -108,11 +108,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(154, 120);
+            this.ClientSize = new System.Drawing.Size(160, 120);
             this.Controls.Add(this.numUpDownNumber);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1280, 1024);

@@ -37,8 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbLogin = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbNewPassword = new System.Windows.Forms.TextBox();
             this.cbAdmin = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -61,12 +59,13 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(175, 20);
             this.tbEmail.TabIndex = 2;
+            this.tbEmail.KeyPress += TbEmail_KeyPress;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(220, 121);
+            this.label4.Location = new System.Drawing.Point(220, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 16);
             this.label4.TabIndex = 21;
@@ -74,7 +73,7 @@
             // 
             // tbConfirmPassword
             // 
-            this.tbConfirmPassword.Location = new System.Drawing.Point(223, 137);
+            this.tbConfirmPassword.Location = new System.Drawing.Point(223, 90);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
             this.tbConfirmPassword.PasswordChar = '*';
             this.tbConfirmPassword.Size = new System.Drawing.Size(175, 20);
@@ -107,6 +106,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(175, 20);
             this.tbPassword.TabIndex = 4;
+            this.tbPassword.KeyPress += TbPassword_KeyPress;
             // 
             // tbLogin
             // 
@@ -114,24 +114,7 @@
             this.tbLogin.Name = "tbLogin";
             this.tbLogin.Size = new System.Drawing.Size(175, 20);
             this.tbLogin.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(220, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 16);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "New password";
-            // 
-            // tbNewPassword
-            // 
-            this.tbNewPassword.Location = new System.Drawing.Point(223, 90);
-            this.tbNewPassword.Name = "tbNewPassword";
-            this.tbNewPassword.PasswordChar = '*';
-            this.tbNewPassword.Size = new System.Drawing.Size(175, 20);
-            this.tbNewPassword.TabIndex = 5;
+            this.tbLogin.KeyPress += TbLogin_KeyPress;
             // 
             // cbAdmin
             // 
@@ -144,6 +127,7 @@
             this.cbAdmin.Name = "cbAdmin";
             this.cbAdmin.Size = new System.Drawing.Size(175, 21);
             this.cbAdmin.TabIndex = 3;
+            this.cbAdmin.TextChanged += CbAdmin_TextChanged;
             // 
             // label6
             // 
@@ -186,6 +170,7 @@
             this.btnApply.TabIndex = 8;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = false;
+            this.btnApply.Visible = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // EditUser
@@ -198,8 +183,6 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbAdmin);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbNewPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label4);
@@ -220,6 +203,7 @@
 
         }
 
+
         #endregion
 
         private System.Windows.Forms.Label label5;
@@ -230,8 +214,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbLogin;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbNewPassword;
         private System.Windows.Forms.ComboBox cbAdmin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancel;

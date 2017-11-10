@@ -84,28 +84,28 @@ namespace ShopElectronics
             this.Login.HeaderText = "Login";
             this.Login.Name = "Login";
             this.Login.ReadOnly = true;
-            this.Login.Width = 110;
+            this.Login.Width = grid.Width / 5;
             // 
             // Password
             // 
             this.Password.HeaderText = "Password";
             this.Password.Name = "Password";
             this.Password.ReadOnly = true;
-            this.Password.Width = 110;
+            this.Password.Width = grid.Width / 5;
             // 
             // Admin
             // 
             this.Admin.HeaderText = "Admin";
             this.Admin.Name = "Admin";
             this.Admin.ReadOnly = true;
-            this.Admin.Width = 80;
+            this.Admin.Width = Convert.ToInt32(grid.Width / 5.4);
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 180;
+            this.Email.Width = grid.Width / 3;
             // 
             // btnEditUser
             // 
@@ -117,7 +117,7 @@ namespace ShopElectronics
             this.btnEditUser.FlatAppearance.BorderSize = 0;
             this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnEditUser.Location = new System.Drawing.Point(288, 457);
+            this.btnEditUser.Location = new System.Drawing.Point(98, 457);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(35, 37);
             this.btnEditUser.TabIndex = 5;
@@ -133,7 +133,7 @@ namespace ShopElectronics
             this.btnDeleteUser.FlatAppearance.BorderSize = 0;
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDeleteUser.Location = new System.Drawing.Point(96, 457);
+            this.btnDeleteUser.Location = new System.Drawing.Point(156, 457);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(35, 37);
             this.btnDeleteUser.TabIndex = 6;

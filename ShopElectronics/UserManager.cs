@@ -45,6 +45,11 @@ namespace ShopElectronics
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete the selected item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(dr == DialogResult.No)
+                return;
+
             //выбранная ячейка грида
             DataGridViewCell viewCell = grid.CurrentCell;
             int indexRow = viewCell.RowIndex; //индекст строки в гриде

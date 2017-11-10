@@ -47,31 +47,31 @@ namespace ShopElectronics
             // 
             // AddNewProduct
             // 
-            this.AddNewProduct.BackColor = System.Drawing.Color.Azure;
-            this.AddNewProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddNewProduct.BackgroundImage")));
+            this.AddNewProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(230)))), ((int)(((byte)(137)))));
             this.AddNewProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddNewProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddNewProduct.FlatAppearance.BorderSize = 0;
             this.AddNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddNewProduct.ForeColor = System.Drawing.Color.Black;
-            this.AddNewProduct.Location = new System.Drawing.Point(186, 147);
+            this.AddNewProduct.Location = new System.Drawing.Point(126, 159);
             this.AddNewProduct.Name = "AddNewProduct";
-            this.AddNewProduct.Size = new System.Drawing.Size(30, 30);
+            this.AddNewProduct.Size = new System.Drawing.Size(65, 30);
             this.AddNewProduct.TabIndex = 5;
+            this.AddNewProduct.Text = "Add";
             this.AddNewProduct.UseVisualStyleBackColor = false;
             this.AddNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
             // 
             // tbNameFirm
             // 
-            this.tbNameFirm.Location = new System.Drawing.Point(22, 110);
+            this.tbNameFirm.Location = new System.Drawing.Point(152, 56);
             this.tbNameFirm.Name = "tbNameFirm";
             this.tbNameFirm.Size = new System.Drawing.Size(120, 20);
             this.tbNameFirm.TabIndex = 2;
             // 
             // tbNameProduct
             // 
-            this.tbNameProduct.Location = new System.Drawing.Point(23, 47);
+            this.tbNameProduct.Location = new System.Drawing.Point(152, 24);
             this.tbNameProduct.Name = "tbNameProduct";
             this.tbNameProduct.Size = new System.Drawing.Size(119, 20);
             this.tbNameProduct.TabIndex = 1;
@@ -81,7 +81,7 @@ namespace ShopElectronics
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label1.Location = new System.Drawing.Point(18, 22);
+            this.label1.Location = new System.Drawing.Point(18, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 22);
             this.label1.TabIndex = 10;
@@ -91,7 +91,7 @@ namespace ShopElectronics
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label2.Location = new System.Drawing.Point(18, 85);
+            this.label2.Location = new System.Drawing.Point(18, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 22);
             this.label2.TabIndex = 9;
@@ -101,7 +101,7 @@ namespace ShopElectronics
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label3.Location = new System.Drawing.Point(175, 23);
+            this.label3.Location = new System.Drawing.Point(18, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 22);
             this.label3.TabIndex = 8;
@@ -111,7 +111,7 @@ namespace ShopElectronics
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label4.Location = new System.Drawing.Point(175, 86);
+            this.label4.Location = new System.Drawing.Point(18, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 22);
             this.label4.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace ShopElectronics
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Exit.ForeColor = System.Drawing.Color.Black;
-            this.Exit.Location = new System.Drawing.Point(234, 147);
+            this.Exit.Location = new System.Drawing.Point(207, 162);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(65, 27);
             this.Exit.TabIndex = 6;
@@ -136,7 +136,7 @@ namespace ShopElectronics
             // 
             // numUpDownNumber
             // 
-            this.numUpDownNumber.Location = new System.Drawing.Point(179, 47);
+            this.numUpDownNumber.Location = new System.Drawing.Point(152, 89);
             this.numUpDownNumber.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -158,7 +158,7 @@ namespace ShopElectronics
             // 
             // numUpDownPrice
             // 
-            this.numUpDownPrice.Location = new System.Drawing.Point(179, 110);
+            this.numUpDownPrice.Location = new System.Drawing.Point(152, 124);
             this.numUpDownPrice.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -185,7 +185,7 @@ namespace ShopElectronics
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(321, 189);
+            this.ClientSize = new System.Drawing.Size(288, 201);
             this.Controls.Add(this.numUpDownPrice);
             this.Controls.Add(this.numUpDownNumber);
             this.Controls.Add(this.Exit);
@@ -196,10 +196,11 @@ namespace ShopElectronics
             this.Controls.Add(this.tbNameProduct);
             this.Controls.Add(this.tbNameFirm);
             this.Controls.Add(this.AddNewProduct);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(337, 228);
-            this.MinimumSize = new System.Drawing.Size(337, 228);
+            this.MaximumSize = new System.Drawing.Size(337, 240);
+            this.MinimumSize = new System.Drawing.Size(300, 240);
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProduct";

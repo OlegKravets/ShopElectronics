@@ -27,6 +27,12 @@ namespace ShopElectronics
             //проверка
             //--------------------------------------------------------------
 
+            if(!char.IsLetterOrDigit(tbNameProduct.Text[0]))
+            {
+                MessageBox.Show("Name product must begin with a symbol!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if(string.IsNullOrEmpty(tbNameProduct.Text) ||
                string.IsNullOrEmpty(tbNameFirm.Text))
             {
@@ -51,7 +57,7 @@ namespace ShopElectronics
             if(tbNameProduct.Text == string.Empty)
                 return;            
 
-                if(char.IsDigit(tbNameProduct.Text[0]))
+                if(char.IsSymbol(tbNameProduct.Text[0]))
             {
                 MessageBox.Show("NameProduct can not begin with a digit!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbNameProduct.Clear();

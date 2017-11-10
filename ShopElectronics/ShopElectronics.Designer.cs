@@ -45,6 +45,7 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
@@ -188,28 +189,28 @@
             this.NameProduct.HeaderText = "Name Product";
             this.NameProduct.Name = "NameProduct";
             this.NameProduct.ReadOnly = true;
-            this.NameProduct.Width = 150;
+            this.NameProduct.Width = dataGridView.Width / 3;
             // 
             // Firm
             // 
             this.Firm.HeaderText = "Firm";
             this.Firm.Name = "Firm";
             this.Firm.ReadOnly = true;
-            this.Firm.Width = 150;
+            this.Firm.Width = dataGridView.Width / 3;
             // 
             // Number
             // 
             this.Number.HeaderText = "Number";
             this.Number.Name = "Number";
             this.Number.ReadOnly = true;
-            this.Number.Width = 78;
+            this.Number.Width = dataGridView.Width / 8;
             // 
             // Price
             // 
             this.Price.HeaderText = "Price($)";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 79;
+            this.Price.Width = dataGridView.Width / 8;
             // 
             // menuMain
             // 
@@ -226,7 +227,8 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToExcelToolStripMenuItem,
-            this.printToolStripMenuItem});
+            this.printToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -237,7 +239,7 @@
             this.exportToExcelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportToExcelToolStripMenuItem.Image")));
             this.exportToExcelToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(166, 38);
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportToExcelToolStripMenuItem.Text = "Export to Excel";
             this.exportToExcelToolStripMenuItem.Click += new System.EventHandler(this.ExportProducts_Click);
             // 
@@ -246,9 +248,18 @@
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(166, 38);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.PrintProducts_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
+            this.exitToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // ShopElectronics
             // 
@@ -306,5 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }

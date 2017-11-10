@@ -12,14 +12,19 @@ namespace ShopElectronics
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(this.btnApply, "Add new user");
             toolTip1.SetToolTip(this.btnCancel, "Return to main page");
-
-            rbSimpleUser.Checked = true;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            if(!char.IsLetterOrDigit(tbLogin.Text[0]))
+            {
+                MessageBox.Show("Login must begin with a symbol!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if(string.IsNullOrEmpty(tbLogin.Text) || string.IsNullOrEmpty(tbPassword.Text) || 
-               string.IsNullOrEmpty(tbEmail.Text) || string.IsNullOrEmpty(tbConfirmPassword.Text))
+               string.IsNullOrEmpty(tbEmail.Text) || string.IsNullOrEmpty(tbConfirmPassword.Text) ||
+               string.IsNullOrEmpty(cbAdmin.Text))
             {
                 MessageBox.Show("Not all fields are filled out!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -47,9 +52,7 @@ namespace ShopElectronics
                 return;
             }
 
-            string typeUser = rbAdmin.Checked == true ? "true" : "false";
-
-            if(User.AddUser(tbLogin.Text, tbPassword.Text, typeUser, tbEmail.Text) == false)
+            if(User.AddUser(tbLogin.Text, tbPassword.Text, cbAdmin.Text, tbEmail.Text) == false)
             {
                 MessageBox.Show("Such user already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

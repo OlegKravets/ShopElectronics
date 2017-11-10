@@ -157,5 +157,10 @@ namespace ShopElectronics
             dataGridView.Rows.Clear();
             DataDBShop.ViewData(dataGridView);
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
